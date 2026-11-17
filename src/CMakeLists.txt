@@ -33,8 +33,8 @@ set(ZIGBEE_SRC
         ${SDK_PREFIX}/Components/ZigbeeCommon/Source/appZdpExtraction.c
         ${SDK_PREFIX}/Components/ZigbeeCommon/Source/appZpsBeaconHandler.c
         ${SDK_PREFIX}/Components/ZigbeeCommon/Source/ZTimer.c
-	${SDK_PREFIX}/Components/ZigbeeCommon/Source/ZQueue.c
-	${SDK_PREFIX}/Components/ZigbeeCommon/Source/portasm_${JENNIC_CHIP_FAMILY}.S
+        ${SDK_PREFIX}/Components/ZigbeeCommon/Source/ZQueue.c
+        ${SDK_PREFIX}/Components/ZigbeeCommon/Source/portasm_${JENNIC_CHIP_FAMILY}.S
         ${SDK_PREFIX}/Components/ZigbeeCommon/Source/port_${JENNIC_CHIP_FAMILY}.c
 
         ${SDK_PREFIX}/Components/ZCIF/Source/dlist.c
@@ -110,7 +110,7 @@ target_include_directories(ZigBee PRIVATE
         ${SDK_PREFIX}/Components/BDB/Source/Common
         ${SDK_PREFIX}/Components/BDB/Source/NwkSteering
         ${SDK_PREFIX}/Components/PWRM/Include
-	${SDK_PREFIX}/Components/MicroSpecific/Include
+        ${SDK_PREFIX}/Components/MicroSpecific/Include
         ${SDK_PREFIX}/Components/ZCL/Clusters/General/Source
         ${SDK_PREFIX}/Components/ZCL/Clusters/OTA/Include
 
@@ -196,7 +196,7 @@ set(SOURCES
         EndpointManager.cpp
         ZigbeeDevice.cpp
         BasicClusterEndpoint.cpp
-	OOSC.c
+	    OOSC.c
         OTAHandlers.cpp
         ZCLTimer.cpp
         Main.cpp
