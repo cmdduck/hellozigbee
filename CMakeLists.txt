@@ -2,6 +2,9 @@
 # Debug symbols will be still present in the ELF file
 set(CMAKE_BUILD_TYPE Release)
 
+# Hint towards a .venv with Python 3
+set(Python3_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/.venv")
+
 # Prepare the toolchain for JN5169 microcontroller
 set(JENNIC_CHIP JN5169)
 include(cmake/JennicSDK.cmake)
