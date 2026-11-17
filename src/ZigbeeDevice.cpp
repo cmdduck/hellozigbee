@@ -54,7 +54,9 @@ ZigbeeDevice::ZigbeeDevice()
     // which already sits below the cap, so on its own it had no measurable LQI
     // effect. It is kept as an explicit legal ceiling for the amplified output
     // once the external PA (below) is enabled.
+#ifdef JENNIC_CHIP_JN5169
     vAppApiSetComplianceLimits(8, 8, 48);
+#endif
 
 #ifdef SUPPORTS_RF_FRONTEND
     // Enable the on-board RF front-end module (PA + LNA + T/R switch, e.g. the

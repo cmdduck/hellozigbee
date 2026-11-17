@@ -206,6 +206,16 @@ set(SOURCES
         pdum_gen.c
         pdum_apdu.S
 )
+if(JENNIC_CHIP STREQUAL "JN5169")
+	set(HardwareApiLib HardwareApi_${JENNIC_CHIP})
+	set(MiniMacLib MiniMac_${JENNIC_CHIP})
+	set(MMACLib MMAC_${JENNIC_CHIP})
+else()
+	set(HardwareApiLib HardwareApi_${JENNIC_CHIP_FAMILY})
+	set(MiniMacLib MiniMac_${JENNIC_CHIP_FAMILY})
+	set(MMACLib MMAC_${JENNIC_CHIP_FAMILY})
+endif()
+
 
 add_executable(HelloZigbee ${SOURCES})
 target_link_libraries(HelloZigbee
@@ -217,12 +227,12 @@ target_link_libraries(HelloZigbee
         AES_SW_${JENNIC_CHIP_FAMILY}
         Boot_${JENNIC_CHIP_FAMILY}
         DBG_${JENNIC_CHIP_FAMILY}
-        HardwareApi_${JENNIC_CHIP}
+        ${HardwareApiLib}
         JPT_${JENNIC_CHIP}
         MicroSpecific_${JENNIC_CHIP_FAMILY}
-        MiniMac_${JENNIC_CHIP}
+        ${MiniMacLib}
         MiniMacShim_${JENNIC_CHIP_FAMILY}
-        MMAC_${JENNIC_CHIP}
+		${MMACLib}
         PDM_EEPROM_NO_RTOS_${JENNIC_CHIP_FAMILY}
         PDUM_${JENNIC_CHIP_FAMILY}
         Random_${JENNIC_CHIP_FAMILY}

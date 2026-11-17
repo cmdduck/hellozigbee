@@ -66,7 +66,9 @@ void OTAHandlers::initFlash()
     if (u32REG_SysRead(REG_SYS_FLASH_REMAP) & 0xf)
     {
         vREG_SysWrite(REG_SYS_FLASH_REMAP,  0xfedcba98);
+#ifdef JENNIC_CHIP_JN5169
         vREG_SysWrite(REG_SYS_FLASH_REMAP2, 0x76543210);
+#endif
     }
 
     // Initialize flash memory for storing downloaded firmwares
